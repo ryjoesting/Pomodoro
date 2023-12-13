@@ -9,7 +9,7 @@
     height: 160px;
     width: 160px;
     padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15), -6px -6px 10px -1px rgba(255,255,255,0.7);
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.8), -6px -6px 10px -1px rgba(0,0,0,0.2);
     /* z-index: 10; */
     justify-content: center;
     align-items: center;
@@ -17,16 +17,17 @@
 }
 .inner {
     border-radius: 50%;
+    background: #444444;
     height: 140px;
     width: 140px;
     align-items: center;
     justify-content: center;
     display: flex;
-    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-                -0.5px -0.5px 0px rgba(255,255,255,1),
-                0.5px 0.5px 0px rgba(0,0,0,0.15),
-                0px 12px 10px -10px rgba(0,0,0,0.05);
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,.7),
+                inset -4px -4px 6px -1px rgba(40,40,40,1),
+                -0.5px -0.5px 0px rgba(40,40,40,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.45),
+                0px 12px 10px -10px rgba(0,0,0,0.5);
 }
 circle {
     fill: none;
