@@ -4,7 +4,7 @@ function Clock() {
     return (
         <div className="clock-container">
             <div className='outer'>
-                <div className="inner"><h1 className='time'>## %</h1></div>
+                <div className="inner"><h1 id='time-left'>## %</h1></div>
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
@@ -15,7 +15,7 @@ function Clock() {
                         <stop offset="100%" stopColor="#470a8e" />
                     </linearGradient>
                 </defs>
-                <circle cx="100" cy="100" r="85" strokeLinecap="round" />
+                <circle cx="100" cy="100" r="85" strokeLinecap="round"/>
             </svg>
         </div>
     );

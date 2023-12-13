@@ -2,6 +2,9 @@
     width: 160px;
     height: 160px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1;
 }
 
 .outer {
@@ -33,10 +36,10 @@ circle {
     fill: none;
     stroke: url(#GradientColor);
     stroke-width: 30px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
     animation: anim 2s linear forwards;
-    
+    transform: rotate(-90deg) translate(-200px);
 }
 svg {
     top: 0;

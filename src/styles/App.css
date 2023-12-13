@@ -1,0 +1,15 @@
+.btn-group {
+    display: flex;
+    margin: 20px;
+}
+.btn-group > * {
+    flex: 1;
+}
+#break-label, #session-label {
+    display: flex;
+    justify-content: center;
+}
+#break-length, #session-length {
+    margin-left: 10px;
+    text-align: center;
+}
