@@ -1,8 +1,11 @@
 import './styles/App.css';
+import Clock from './Clock'
 
 function App() {
   return (
-    <h1>Hello</h1>
+    <div className='clock-container'>
+      <Clock />
+    </div>
   );
 }
 

@@ -1,1 +1,6 @@
-
+.clock-container {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    display: flex;
+}
