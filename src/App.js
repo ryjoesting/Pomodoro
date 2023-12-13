@@ -6,11 +6,37 @@ function App() {
 
   const [sessionLength, setSessionLength] = useState(25);
   const [breakLength, setBreakLength] = useState(5);
+  const [timer, setTimer] = useState(1500); //in num seconds
+  const [timerStr, setTimerStr] = useState('25:00');
+  const [isPaused, setIsPaused] = useState(true);
 
-  const incSesh = () => setSessionLength(sessionLength + 1);
-  const decSesh = () => setSessionLength(sessionLength - 1);
-  const incBreak = () => setBreakLength(breakLength + 1);
-  const decBreak = () => setBreakLength(breakLength - 1);
+  const incSesh = () => {
+    if (sessionLength < 60) setSessionLength(sessionLength + 1);
+    setTimer(60 * sessionLength);
+    updateTimerStr();
+  }
+  const decSesh = () => {
+    if (sessionLength > 0) setSessionLength(sessionLength - 1);
+    setTimer(60 * sessionLength);
+  }
+  const incBreak = () => {
+    if (breakLength < 60) setBreakLength(breakLength + 1);
+  }
+  const decBreak = () => {
+    if (breakLength > 0) setBreakLength(breakLength - 1);
+  }
+
+  const updateTimerStr = () => {
+    let min = Math.floor(timer / 60);
+    if (min < 10) {
+      min = '0' + min;
+    }
+    let secs = timer % 60;
+    if (secs < 10) {
+      secs = '0' + secs;
+    }
+    setTimerStr(min + ':' + secs);
+  }
 
   return (
     <div id='app'>
@@ -26,7 +52,7 @@ function App() {
         <button id='start_stop'>|| |&gt;</button>
         <button id='reset'>Reset</button>
       </span>
-      <Clock />
+      <Clock timerStr={timerStr} />
     </div>
   );
 }

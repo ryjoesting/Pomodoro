@@ -1,10 +1,10 @@
 import './styles/Clock.css'
 
-function Clock() {
+function Clock({timerStr}) {
     return (
         <div className="clock-container">
             <div className='outer'>
-                <div className="inner"><h1 id='time-left'>## %</h1></div>
+                <div className="inner"><h1 id='time-left'>{timerStr}</h1></div>
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
