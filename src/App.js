@@ -28,13 +28,17 @@ function App() {
   }
 
   const reset = () => {
+    clearInterval(iCountdown);
+    setIsTimerStarted(false);
     setSessionLength(25);
     setBreakLength(5);
+    setTimer(1500);
   }
 
   const startStop = () => {
     if (!isTimerStarted) { //start the countdown
       let count = timer;
+      setIsTimerStarted(true);
       iCountdown = setInterval( () => {
         count = count - 1;
         setTimer(count);
@@ -45,6 +49,7 @@ function App() {
 
   return (
     <div id='app'>
+      {!isTimerStarted &&
       <div  id='setup-controls'>
         <h1 id='session-label'>Session Length: <code id='session-length'>{sessionLength}</code></h1>
         <h2 id='break-label'>Break Length: <code id='break-length'>{breakLength}</code></h2>
@@ -54,7 +59,7 @@ function App() {
           <button onClick={incBreak} id='break-increment'>Break Up</button>
           <button onClick={decBreak} id='break-decrement'>Break Down</button>
         </span>
-      </div>
+      </div>}
       <span className="btn-group" id='start-stop-reset'>
           <button id='start_stop' onClick={startStop}>Start/Stop</button>
           <button id='reset' onClick={reset}>Reset</button>
