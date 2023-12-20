@@ -1,10 +1,23 @@
 import './styles/Clock.css'
 
-function Clock({timerStr}) {
+function Clock({timer}) { //timer passed in seconds remaining
+
+    const createTimerStr = (timer) => {
+        let min = Math.floor(timer / 60);
+        if (min < 10) {
+            min = '0' + min;
+        }
+        let secs = timer % 60;
+        if (secs < 10) {
+            secs = '0' + secs;
+        }
+        return min + ':' + secs;
+    }
+
     return (
         <div className="clock-container">
             <div className='outer'>
-                <div className="inner"><h1 id='time-left'>{timerStr}</h1></div>
+                <div className="inner"><h1 id='time-left'>{createTimerStr(timer)}</h1></div>
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
